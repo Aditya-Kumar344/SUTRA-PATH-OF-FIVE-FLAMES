@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://dv8wnjhmgqb8l"]
+
+[ext_resource type="Script" uid="uid://dmq3evaw0jmvd" path="res://Assets/Scenes/main_menu.gd" id="1_eonyl"]
+[ext_resource type="Texture2D" uid="uid://dmby6b07a0cci" path="res://Assets/Sprites/SUTRA_ पथ पांच ज्वालाएँ.png" id="1_r65r0"]
+[ext_resource type="Texture2D" uid="uid://dbom8cqkyt3xx" path="res://Assets/Sprites/fire_column_medium/fire_column_medium_4.png" id="2_5bf3f"]
+[ext_resource type="Texture2D" uid="uid://3vbrofhmhmrv" path="res://Assets/Sprites/fire_column_medium/fire_column_medium_5.png" id="3_eonyl"]
+[ext_resource type="Texture2D" uid="uid://ctflafldp1x4x" path="res://Assets/Sprites/fire_column_medium/fire_column_medium_6.png" id="4_5civ5"]
+[ext_resource type="Texture2D" uid="uid://gbkp1e16ghy6" path="res://Assets/Sprites/fire_column_medium/fire_column_medium_7.png" id="5_7hct0"]
+[ext_resource type="Texture2D" uid="uid://desoprlw3liq2" path="res://Assets/Sprites/fire_column_medium/fire_column_medium_8.png" id="6_humdj"]
+[ext_resource type="Texture2D" uid="uid://bg7xknwge0pvn" path="res://Assets/Sprites/fire_column_medium/fire_column_medium_9.png" id="7_sl80t"]
+
+[sub_resource type="Animation" id="Animation_bi5jl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_n1r1d"]
+resource_name = "fire"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_5bf3f"), ExtResource("3_eonyl"), ExtResource("4_5civ5"), ExtResource("5_7hct0"), ExtResource("6_humdj"), ExtResource("7_sl80t")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6tcu1"]
+_data = {
+&"RESET": SubResource("Animation_bi5jl"),
+&"fire": SubResource("Animation_n1r1d")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_eonyl")
+fade_out_duration = 0.0
+
+[node name="Sutraपथपांचज्वालाएँ" type="Sprite2D" parent="."]
+position = Vector2(700, 384)
+scale = Vector2(0.926647, 0.895508)
+texture = ExtResource("1_r65r0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(643, 360)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 347)
+scale = Vector2(4, 4)
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 560.0
+offset_top = -36.0
+offset_right = -560.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "START"
+
+[node name="Button2" type="Button" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 560.0
+offset_top = 56.0
+offset_right = -560.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6tcu1")
+}
+autoplay = "fire"

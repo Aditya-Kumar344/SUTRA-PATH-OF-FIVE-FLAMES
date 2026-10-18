@@ -1,0 +1,150 @@
+[gd_scene load_steps=14 format=3 uid="uid://dhijr10y6pcyo"]
+
+[ext_resource type="Texture2D" uid="uid://spj2p0fk0f3d" path="res://Assets/Sprites/ChatGPT Image Jul 27, 2025, 04_12_02 PM.png" id="1_gqxe3"]
+[ext_resource type="Texture2D" uid="uid://dtb0cpp13tpce" path="res://Assets/Sprites/500 Bullet 24x24 Free/Bullet 24x24 Free  Part 1B.png" id="2_i8c82"]
+[ext_resource type="Script" uid="uid://pqor814u07i8" path="res://Assets/Scenes/float.gd" id="3_ub2l4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqxe3"]
+atlas = ExtResource("2_i8c82")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8c82"]
+atlas = ExtResource("2_i8c82")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub2l4"]
+atlas = ExtResource("2_i8c82")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fimq"]
+atlas = ExtResource("2_i8c82")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwk6g"]
+atlas = ExtResource("2_i8c82")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwlgd"]
+atlas = ExtResource("2_i8c82")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ipbq"]
+atlas = ExtResource("2_i8c82")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20cgo"]
+atlas = ExtResource("2_i8c82")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cj7u3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqxe3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8c82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub2l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fimq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwk6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwlgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ipbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20cgo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ekyn"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ChatGptImageJul5,2025,054501Pm" type="Sprite2D" parent="."]
+position = Vector2(643, 395)
+scale = Vector2(0.852539, 0.852539)
+texture = ExtResource("1_gqxe3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(644, 274)
+scale = Vector2(4.75, 4.75)
+sprite_frames = SubResource("SpriteFrames_cj7u3")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("3_ub2l4")
+target_scene = "res://Assets/Scenes/second_skill.tscn"
+button_node_path = NodePath("../Button")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 113.0
+offset_right = 4.0
+offset_bottom = 189.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.917647, 0.796078, 0.360784, 1)
+theme_override_font_sizes/font_size = 45
+text = "Flame of the Veil"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(646, 363)
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = 24.0
+offset_right = 5.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.717647, 0.827451, 0.658824, 1)
+theme_override_font_sizes/font_size = 25
+text = "You have awakened the second sacred flame, shrouded in the heart of the frozen woods.
+
+The mist recedes. A blue shimmer spreads across the forest.
+Stillness breaks — silence hums with ancient energy.
+Two flames now burn… last remain."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -73.0
+offset_right = -45.0
+offset_bottom = -38.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ekyn")
+text = "Next >>"

@@ -1,0 +1,137 @@
+[gd_scene load_steps=13 format=3 uid="uid://dj3airim3xe4r"]
+
+[ext_resource type="Texture2D" uid="uid://cyxck3i34fwde" path="res://Assets/New Sprites/ChatGPT Image Jul 28, 2025, 08_56_07 PM.png" id="1_rss6c"]
+[ext_resource type="Texture2D" uid="uid://dtb0cpp13tpce" path="res://Assets/Sprites/500 Bullet 24x24 Free/Bullet 24x24 Free  Part 1B.png" id="2_27og3"]
+[ext_resource type="Script" uid="uid://0glttlxqqdgp" path="res://Assets/Scenes/final.gd" id="3_rss6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rss6c"]
+atlas = ExtResource("2_27og3")
+region = Rect2(0, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27og3"]
+atlas = ExtResource("2_27og3")
+region = Rect2(24, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfcpq"]
+atlas = ExtResource("2_27og3")
+region = Rect2(48, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8uhf"]
+atlas = ExtResource("2_27og3")
+region = Rect2(72, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qky82"]
+atlas = ExtResource("2_27og3")
+region = Rect2(96, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j2q7"]
+atlas = ExtResource("2_27og3")
+region = Rect2(120, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w1vl"]
+atlas = ExtResource("2_27og3")
+region = Rect2(144, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nsb7"]
+atlas = ExtResource("2_27og3")
+region = Rect2(168, 240, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kttnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rss6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27og3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfcpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8uhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qky82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j2q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w1vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nsb7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ChatGptImageJul5,2025,054501Pm" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.858824)
+position = Vector2(643, 395)
+scale = Vector2(0.852539, 0.852539)
+texture = ExtResource("1_rss6c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(644, 274)
+scale = Vector2(4.75, 4.75)
+sprite_frames = SubResource("SpriteFrames_kttnf")
+autoplay = "default"
+frame_progress = 0.138596
+script = ExtResource("3_rss6c")
+target_scene = "res://Assets/Scenes/main menu.tscn"
+button_node_path = NodePath("../Button")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 113.0
+offset_right = 4.0
+offset_bottom = 189.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.65098, 0.941176, 0.890196, 1)
+theme_override_font_sizes/font_size = 45
+text = "Flame of Embercore"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(646, 363)
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = 37.0
+offset_right = 5.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.643137, 0.901961, 0.694118, 1)
+theme_override_font_sizes/font_size = 25
+text = "The last sacred flame flickers to life.
+
+The forest stands whole — healed by your courage.
+All three flames burn bright."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -715.0
+offset_top = -140.0
+offset_right = -565.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"

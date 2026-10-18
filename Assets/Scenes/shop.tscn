@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmrh2uvn18rak"]
+
+[ext_resource type="Texture2D" uid="uid://8v62s0fvfv1m" path="res://Assets/Tilemaps/oak_woods_v1.0/decorations/shop_anim.png" id="1_rfwe3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cgyj"]
+atlas = ExtResource("1_rfwe3")
+region = Rect2(0, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m65fh"]
+atlas = ExtResource("1_rfwe3")
+region = Rect2(118, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88w0c"]
+atlas = ExtResource("1_rfwe3")
+region = Rect2(236, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0ok4"]
+atlas = ExtResource("1_rfwe3")
+region = Rect2(354, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17tq6"]
+atlas = ExtResource("1_rfwe3")
+region = Rect2(472, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ortk"]
+atlas = ExtResource("1_rfwe3")
+region = Rect2(590, 0, 118, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dciiy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cgyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m65fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88w0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0ok4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17tq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ortk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_dciiy")
+autoplay = "default"
+frame_progress = 0.288792

@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://c60b5hhmjsnk6"]
+
+[ext_resource type="Script" uid="uid://cf8sqhsew3gr1" path="res://Assets/Scripts/collectibles.gd" id="1_jbvax"]
+[ext_resource type="Texture2D" uid="uid://dtb0cpp13tpce" path="res://Assets/Sprites/500 Bullet 24x24 Free/Bullet 24x24 Free  Part 1B.png" id="2_3qmba"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thvb2"]
+atlas = ExtResource("2_3qmba")
+region = Rect2(0, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u44fl"]
+atlas = ExtResource("2_3qmba")
+region = Rect2(24, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6caqr"]
+atlas = ExtResource("2_3qmba")
+region = Rect2(48, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kel3h"]
+atlas = ExtResource("2_3qmba")
+region = Rect2(72, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh8j2"]
+atlas = ExtResource("2_3qmba")
+region = Rect2(96, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urmkh"]
+atlas = ExtResource("2_3qmba")
+region = Rect2(120, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deprm"]
+atlas = ExtResource("2_3qmba")
+region = Rect2(144, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqwmj"]
+atlas = ExtResource("2_3qmba")
+region = Rect2(168, 120, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwe2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thvb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u44fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6caqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kel3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh8j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urmkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deprm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqwmj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbvax"]
+size = Vector2(423, 523)
+
+[node name="Area2D" type="Area2D" groups=["Collectible"]]
+script = ExtResource("1_jbvax")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_hwe2l")
+animation = &"idle"
+frame_progress = 0.835166
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 262)
+shape = SubResource("RectangleShape2D_jbvax")

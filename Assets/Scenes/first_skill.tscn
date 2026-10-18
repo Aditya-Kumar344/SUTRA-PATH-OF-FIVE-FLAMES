@@ -1,0 +1,211 @@
+[gd_scene load_steps=21 format=3 uid="uid://cwmck31h7ena5"]
+
+[ext_resource type="Texture2D" uid="uid://baaroujcxdwo6" path="res://Assets/Sprites/ChatGPT Image Jul 5, 2025, 05_45_01 PM.png" id="1_sv5e1"]
+[ext_resource type="Texture2D" uid="uid://d3wedfjqetf1t" path="res://Assets/Sprites/Elementals_Leaf_ranger_Free_v1.0/animations/spritesheets/Elementals_leaf_ranger_288x128_SpriteSheet.png" id="2_qa2m2"]
+[ext_resource type="Script" uid="uid://da487vejw5blu" path="res://Assets/Scenes/Continue_first.gd" id="3_qa2m2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykl48"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(0, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tchm7"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(288, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjdsc"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(576, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2irn"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(864, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1682e"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(1152, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxhxb"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(1440, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spo8o"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(1728, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx7b8"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(2016, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlnm7"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(2304, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrn3s"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(2592, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usvnq"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(2880, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjqt4"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(3168, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu1f6"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(3456, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4axm"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(3744, 1408, 288, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5h1g"]
+atlas = ExtResource("2_qa2m2")
+region = Rect2(4032, 1408, 288, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_crtn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykl48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tchm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjdsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2irn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1682e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxhxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spo8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lx7b8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlnm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrn3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usvnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjqt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu1f6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4axm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5h1g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ekyn"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ChatGptImageJul5,2025,054501Pm" type="Sprite2D" parent="."]
+position = Vector2(643, 395)
+scale = Vector2(0.852539, 0.852539)
+texture = ExtResource("1_sv5e1")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 113.0
+offset_right = 4.0
+offset_bottom = 189.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.74902, 0.368627, 1)
+theme_override_font_sizes/font_size = 45
+text = "New Skill"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(619, 152)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_crtn8")
+autoplay = "default"
+frame_progress = 0.655321
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(646, 363)
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = 91.0
+offset_right = 1.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.717647, 0.827451, 0.658824, 1)
+theme_override_font_sizes/font_size = 25
+text = "You have awakened the sacred flame.
+Channel its fury through your bow to scorch all in your path."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -73.0
+offset_right = -45.0
+offset_bottom = -38.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5ekyn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ekyn")
+text = "Continue >>"
+script = ExtResource("3_qa2m2")
+target_scene_path = "res://Assets/Scenes/level2.tscn"
+fade_out_duration = 0.0
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -150.0
+offset_right = 5.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Press [L] to fire a arrow straight ahead"
+horizontal_alignment = 1

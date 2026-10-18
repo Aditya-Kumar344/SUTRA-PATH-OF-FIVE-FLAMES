@@ -1,0 +1,100 @@
+[gd_scene load_steps=13 format=3 uid="uid://bl0j60ee7op53"]
+
+[ext_resource type="Script" uid="uid://c8dxp065sgjgl" path="res://arrow.gd" id="1_urhp6"]
+[ext_resource type="Texture2D" uid="uid://cjy2a7x76hyep" path="res://Assets/Sprites/Elementals_Leaf_ranger_Free_v1.0/animations/spritesheets/projectiles_and_effects_256x128_SpriteSheet.png" id="2_jlmnk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkx68"]
+atlas = ExtResource("2_jlmnk")
+region = Rect2(0, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j653t"]
+atlas = ExtResource("2_jlmnk")
+region = Rect2(256, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn6vg"]
+atlas = ExtResource("2_jlmnk")
+region = Rect2(512, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8wcg"]
+atlas = ExtResource("2_jlmnk")
+region = Rect2(768, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks6cb"]
+atlas = ExtResource("2_jlmnk")
+region = Rect2(1024, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtxrl"]
+atlas = ExtResource("2_jlmnk")
+region = Rect2(1280, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oxsa"]
+atlas = ExtResource("2_jlmnk")
+region = Rect2(0, 0, 271, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bedes"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkx68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j653t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn6vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8wcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ks6cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtxrl")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3oxsa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ya68"]
+radius = 2.0
+height = 30.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ema2k"]
+radius = 3.0
+
+[node name="Arrow" type="RigidBody2D"]
+script = ExtResource("1_urhp6")
+arrow_damage = 35
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_bedes")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.110217
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-26, -2)
+rotation = 1.5708
+scale = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_0ya68")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="HitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+z_index = 1
+position = Vector2(23, -2)
+scale = Vector2(4, 6)
+shape = SubResource("CircleShape2D_ema2k")

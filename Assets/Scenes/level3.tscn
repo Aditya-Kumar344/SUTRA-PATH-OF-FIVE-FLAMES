@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://ecyl4qv30cru"]
+
+[ext_resource type="Texture2D" uid="uid://cgvfmua2cx65h" path="res://Assets/Tilemaps/Parallax_Backgrounds_DeadForest/6.png" id="1_82yt4"]
+[ext_resource type="Texture2D" uid="uid://cm2vhv21hn6s5" path="res://Assets/Tilemaps/Parallax_Backgrounds_DeadForest/5.png" id="2_m4tgm"]
+[ext_resource type="Texture2D" uid="uid://h25846pinjdb" path="res://Assets/Tilemaps/Parallax_Backgrounds_DeadForest/4.png" id="3_8v3eq"]
+[ext_resource type="Texture2D" uid="uid://my1p7xjrl6vh" path="res://Assets/Tilemaps/Parallax_Backgrounds_DeadForest/3.png" id="4_51a03"]
+[ext_resource type="Texture2D" uid="uid://bx7nlaq2d7yf1" path="res://Assets/Tilemaps/Parallax_Backgrounds_DeadForest/2.png" id="5_l8ncw"]
+[ext_resource type="PackedScene" uid="uid://cw64fjb3a6g1h" path="res://Assets/Scenes/fire_fly.tscn" id="6_m4tgm"]
+[ext_resource type="PackedScene" uid="uid://uwixvo1i426x" path="res://Assets/Scenes/player.tscn" id="6_v7feh"]
+[ext_resource type="PackedScene" uid="uid://duhug2uisrevw" path="res://Assets/Scenes/monk_enemy.tscn" id="8_8v3eq"]
+[ext_resource type="PackedScene" uid="uid://b2mnpfon0dl43" path="res://Assets/Scenes/gold_monster.tscn" id="9_51a03"]
+[ext_resource type="PackedScene" uid="uid://y2vhxtigjjhg" path="res://Assets/Scenes/fire_knight.tscn" id="10_l8ncw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eityt"]
+distance = -622.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(1689.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
+position = Vector2(774, 328)
+scale = Vector2(4.4, 4.4)
+texture = ExtResource("1_82yt4")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(1689.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(774, 328)
+scale = Vector2(4.4, 4.4)
+texture = ExtResource("2_m4tgm")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1689.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(774, 328)
+scale = Vector2(4.4, 4.4)
+texture = ExtResource("3_8v3eq")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1689.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer4"]
+position = Vector2(774, 328)
+scale = Vector2(4.4, 4.4)
+texture = ExtResource("4_51a03")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2(0.95, 1)
+motion_mirroring = Vector2(1689.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer5"]
+position = Vector2(774, 328)
+scale = Vector2(4.4, 4.4)
+texture = ExtResource("5_l8ncw")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_v7feh")]
+position = Vector2(-2037, 300)
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("WorldBoundaryShape2D_eityt")
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("6_m4tgm")]
+position = Vector2(1027, 461)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("8_8v3eq")]
+position = Vector2(-4961, 310)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("9_51a03")]
+position = Vector2(1545, 513)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("10_l8ncw")]
+position = Vector2(-515, 366)

@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://byl46yihm3hy0"]
+
+[ext_resource type="Script" uid="uid://byvlht81po50x" path="res://frozen_collectible.gd" id="1_2d8gf"]
+[ext_resource type="Texture2D" uid="uid://dtb0cpp13tpce" path="res://Assets/Sprites/500 Bullet 24x24 Free/Bullet 24x24 Free  Part 1B.png" id="2_kwxce"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wexr"]
+atlas = ExtResource("2_kwxce")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfo0y"]
+atlas = ExtResource("2_kwxce")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77mll"]
+atlas = ExtResource("2_kwxce")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s08aw"]
+atlas = ExtResource("2_kwxce")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs55j"]
+atlas = ExtResource("2_kwxce")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k0ub"]
+atlas = ExtResource("2_kwxce")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doyhh"]
+atlas = ExtResource("2_kwxce")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwypu"]
+atlas = ExtResource("2_kwxce")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0yhn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wexr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfo0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77mll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s08aw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs55j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k0ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doyhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwypu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbvax"]
+size = Vector2(423, 523)
+
+[node name="Area2D" type="Area2D" groups=["Collectible"]]
+script = ExtResource("1_2d8gf")
+next_scene_path = "res://Assets/Scenes/second_flame.tscn"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_a0yhn")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.709859
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 262)
+shape = SubResource("RectangleShape2D_jbvax")

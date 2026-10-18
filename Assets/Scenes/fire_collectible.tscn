@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://btke5o2civiog"]
+
+[ext_resource type="Script" uid="uid://dx0e8ylq2j0i" path="res://Assets/Scenes/fire_collectible.gd" id="1_mt5ww"]
+[ext_resource type="Texture2D" uid="uid://dtb0cpp13tpce" path="res://Assets/Sprites/500 Bullet 24x24 Free/Bullet 24x24 Free  Part 1B.png" id="2_pska0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjau2"]
+atlas = ExtResource("2_pska0")
+region = Rect2(0, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bixx"]
+atlas = ExtResource("2_pska0")
+region = Rect2(24, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owao8"]
+atlas = ExtResource("2_pska0")
+region = Rect2(48, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li15n"]
+atlas = ExtResource("2_pska0")
+region = Rect2(72, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6ox5"]
+atlas = ExtResource("2_pska0")
+region = Rect2(96, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_064fa"]
+atlas = ExtResource("2_pska0")
+region = Rect2(120, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8jgv"]
+atlas = ExtResource("2_pska0")
+region = Rect2(144, 240, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydv7a"]
+atlas = ExtResource("2_pska0")
+region = Rect2(168, 240, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xihsm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjau2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bixx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owao8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li15n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6ox5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_064fa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8jgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydv7a")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbvax"]
+size = Vector2(423, 523)
+
+[node name="Area2D" type="Area2D" groups=["Collectible"]]
+script = ExtResource("1_mt5ww")
+next_scene_path = "res://Assets/Scenes/third_flame.tscn"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_xihsm")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.522985
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 262)
+shape = SubResource("RectangleShape2D_jbvax")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://81auekfp8vk6"]
+
+[ext_resource type="Script" uid="uid://c1vyjm5h8nos0" path="res://Assets/Scenes/fire_ball.gd" id="1_1bdvq"]
+[ext_resource type="Texture2D" uid="uid://n8wefmacfxo7" path="res://Assets/New Sprites/Flying Demon 2D Pixel Art/Sprites/projectile.png" id="2_6bgk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uand2"]
+size = Vector2(54, 26)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_1bdvq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(-1.5, 1.5)
+texture = ExtResource("2_6bgk4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 3)
+shape = SubResource("RectangleShape2D_uand2")
+
+[node name="LifeTimer" type="Timer" parent="."]
